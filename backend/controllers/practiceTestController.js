@@ -1,5 +1,5 @@
-import Attempt from '../models/Attempt.js';
 import PracticeTest from '../models/PracticeTest.js';
+import Attempt from '../models/Attempt.js';
 import Subject from '../models/Subject.js';
 
 // ✅ Create Practice Test
@@ -8,7 +8,7 @@ export const createTest = async (req, res) => {
     const { subjectId } = req.params;
     const { title, questions } = req.body;
 
-    // Ensure subject exist
+    // Ensure subject exists
     const subject = await Subject.findById(subjectId);
     if (!subject) return res.status(404).json({ error: 'Subject not found' });
 
@@ -16,7 +16,7 @@ export const createTest = async (req, res) => {
     const newTest = new PracticeTest({ subjectId, title, questions });
     await newTest.save();
 
-    // Link test to subjects
+    // Link test to subject
     subject.tests.push(newTest._id);
     await subject.save();
 
@@ -27,7 +27,7 @@ export const createTest = async (req, res) => {
   }
 };
 
-//  Admin: Get All Test
+//  Admin: Get All Tests
 export const getAllTests = async (req, res) => {
   try {
     const tests = await PracticeTest.find().populate('subjectId', 'name gradeLevel');
@@ -50,7 +50,7 @@ export const getTestById = async (req, res) => {
       return res.status(400).json({ error: "Invalid test ID." });
     }
 
-    // Find test and populate subjects details
+    // Find test and populate subject details
     const test = await PracticeTest.findById(testId).populate('subjectId', 'name gradeLevel');
 
     if (!test) {
@@ -121,7 +121,7 @@ export const submitTest = async (req, res) => {
       return res.status(400).json({ error: "Invalid answers. Ensure all questions have an answer." });
     }
 
-    // Calculate the scores
+    // Calculate the score
     let score = 0;
     test.questions.forEach((question, index) => {
       if (question.correctAnswer === answers[index]) {
@@ -140,7 +140,7 @@ export const submitTest = async (req, res) => {
   }
 };
 
-// Helper Function to Group Test by Grade & Subject
+// Helper Function to Group Tests by Grade & Subject
 const formatTestsByGradeAndSubject = (tests) => {
   return tests.reduce((acc, test) => {
     const subjectName = test.subjectId.name;
@@ -148,7 +148,7 @@ const formatTestsByGradeAndSubject = (tests) => {
 
     if (!acc[grade]) acc[grade] = {};
     if (!acc[grade][subjectName]) acc[grade][subjectName] = [];
-
+    
     acc[grade][subjectName].push({
       _id: test._id,
       title: test.title,

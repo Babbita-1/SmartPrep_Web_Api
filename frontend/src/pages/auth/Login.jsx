@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../App';
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
+import { AuthContext } from '../../App';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -35,13 +36,7 @@ const Login = () => {
 
     return (
         <div className="flex min-h-screen items-center justify-center">
-
             <div className="w-full max-w-md p-8 bg-white/10 backdrop-blur-md rounded-lg shadow-lg bg-gradient-to-r from-indigo-500 to-purple-600">
-                {modal.open && (
-                    <div className={`mb-4 px-4 py-2 rounded-lg shadow-lg text-white text-center ${modal.type === 'success' ? 'bg-green-500' : 'bg-red-500'}`}>
-                        {modal.message}
-                    </div>
-                )}
                 <h2 className="text-3xl font-semibold text-white text-center mb-4">Welcome Back 👋</h2>
                 <p className="text-white/80 text-center mb-6">Login to continue your journey</p>
 

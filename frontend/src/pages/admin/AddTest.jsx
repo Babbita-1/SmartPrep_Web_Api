@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import api from '../../services/api';
+import { useNavigate } from 'react-router-dom';
+import Modal from '../../components/Modal';
+
 
 const AddTest = () => {
   const [subjects, setSubjects] = useState([]);
@@ -39,7 +41,7 @@ const AddTest = () => {
   const handleQuestionChange = (index, field, value) => {
     const updatedQuestions = [...formData.questions];
 
-    // Ensure questionText is always a strings
+    // Ensure questionText is always a string
     updatedQuestions[index][field] = field === 'questionText' ? String(value) : value;
     setFormData({ ...formData, questions: updatedQuestions });
   };
@@ -47,7 +49,7 @@ const AddTest = () => {
   const handleOptionChange = (qIndex, optIndex, value) => {
     const updatedQuestions = [...formData.questions];
 
-    // Ensure options are always stored as string
+    // Ensure options are always stored as strings
     updatedQuestions[qIndex].options[optIndex] = String(value);
     setFormData({ ...formData, questions: updatedQuestions });
   };
@@ -66,16 +68,16 @@ const AddTest = () => {
       questions: formData.questions.map(q => ({
         questionText: String(q.questionText),
         options: q.options.map(opt => String(opt)),
-        correctAnswer: Number(q.correctAnswer) //  Ensure correctanswer is a number
+        correctAnswer: Number(q.correctAnswer) //  Ensure correctAnswer is a number
       }))
     };
 
     try {
-      await api.post(`/practice/create/${formattedData.subjectId}`, formattedData);
+      await api.post(`/practice/create/${formattedData.subjectId}`, formattedData); 
       setModal({ open: true, message: 'Practice test added successfully!', type: 'success' });
       navigate('/admin/dashboard');
     } catch (error) {
-      // console.error('Error adding practices tests:', error.response?.data || error);
+      // console.error('Error adding practice test:', error.response?.data || error);
       setModal({ open: true, message: 'Failed to add practice test.', type: 'error' });
     }
   };
@@ -167,4 +169,3 @@ const AddTest = () => {
 };
 
 export default AddTest;
-

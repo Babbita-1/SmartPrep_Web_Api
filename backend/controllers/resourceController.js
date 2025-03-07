@@ -1,7 +1,7 @@
 import Resource from '../models/Resource.js';
 import Subject from '../models/Subject.js';
 
-//  Add Resources (Admin Only)
+//  Add Resource (Admin Only)
 export const createResource = async (req, res) => {
   try {
     const { subjectId } = req.params;
@@ -23,7 +23,7 @@ export const createResource = async (req, res) => {
   }
 };
 
-//  Get Resource by Subject (Public)
+//  Get Resources by Subject (Public)
 export const getResourcesBySubject = async (req, res) => {
   try {
     const { subjectId } = req.params;

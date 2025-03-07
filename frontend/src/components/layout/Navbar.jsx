@@ -19,19 +19,9 @@ const Navbar = () => {
       </div>
 
       <div className="hidden md:flex space-x-10 text-lg font-medium">
-        {auth && (
-          <Link to="/" className="text-gray-700 hover:text-blue-500">Dashboard</Link>
-        )}
-        {!auth && (
-          <Link to="/" className="text-gray-700 hover:text-blue-500">Home</Link>
-        )}
+        <Link to="/" className="text-gray-700 hover:text-blue-500">Home</Link>
         <Link to="/about" className="text-gray-700 hover:text-blue-500">About</Link>
-        {!auth && ( // Hide "Subjects" when user is logged in
-          <Link to="/subjects" className="text-gray-700 hover:text-blue-500">Subjects</Link>
-        )}
-        {auth?.role === "admin" && (
-          <Link to="/subjects" className="text-gray-700 hover:text-blue-500">Subjects</Link>
-        )}
+        <Link to="/subjects" className="text-gray-700 hover:text-blue-500">Subjects</Link>
         <Link to="/tests" className="text-gray-700 hover:text-blue-500">Tests</Link>
       </div>
 

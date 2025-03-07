@@ -21,7 +21,7 @@ const AdminDashboard = () => {
           </button>
         </div>
 
-        {/* Add Subjects */}
+        {/* Add Subject */}
         <div className="p-6 bg-white rounded-lg shadow-lg text-center">
           <h3 className="text-xl font-semibold text-blue-700">Subjects</h3>
           <button
@@ -32,7 +32,7 @@ const AdminDashboard = () => {
           </button>
         </div>
 
-        {/* Add Resources */}
+        {/* Add Resource */}
         <div className="p-6 bg-white rounded-lg shadow-lg text-center">
           <h3 className="text-xl font-semibold text-blue-700">Resources</h3>
           <button
@@ -43,14 +43,14 @@ const AdminDashboard = () => {
           </button>
         </div>
 
-        {/* Add Practice Tests */}
+        {/* Add Practice Test */}
         <div className="p-6 bg-white rounded-lg shadow-lg text-center">
           <h3 className="text-xl font-semibold text-blue-700">Practice Tests</h3>
           <button
             onClick={() => navigate('/admin/add-test')}
             className="mt-4 px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700"
           >
-            Add Practice Tests
+            Add Practice Test
           </button>
         </div>
       </div>
@@ -59,6 +59,3 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
-
-
-

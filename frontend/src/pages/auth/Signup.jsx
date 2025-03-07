@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
     const [formData, setFormData] = useState({
@@ -28,9 +29,9 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('/auth/register', {
-                ...formData,
-                academicLevel: formData.role === 'admin' ? null : Number(formData.academicLevel)
+            await api.post('/auth/register', { 
+                ...formData, 
+                academicLevel: formData.role === 'admin' ? null : Number(formData.academicLevel) 
             });
             setModal({ open: true, message: 'Registration successful! You can now log in.', type: 'success' });
 
@@ -43,18 +44,13 @@ const Signup = () => {
                 type: 'error',
             });
 
-            setTimeout(() => setModal({ open: false, message: '', type: '' }), 3000);
+            setTimeout(() => setModal({ open: false, message: '', type: '' }), 2500);
         }
     };
 
     return (
         <div className="flex min-h-screen items-center justify-center">
             <div className="w-full max-w-md p-8 bg-white/10 backdrop-blur-md rounded-lg shadow-lg bg-gradient-to-r from-indigo-500 to-purple-600">
-                {modal.open && (
-                    <div className={`mb-4 px-4 py-2 rounded-lg shadow-lg text-white text-center ${modal.type === 'success' ? 'bg-green-500' : 'bg-red-500'}`}>
-                        {modal.message}
-                    </div>
-                )}
                 <h2 className="text-3xl font-semibold text-white text-center mb-4">Create an Account</h2>
                 <p className="text-white/80 text-center mb-6">Join us and start your journey</p>
 

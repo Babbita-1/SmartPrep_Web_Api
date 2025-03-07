@@ -1,6 +1,6 @@
 import Subject from '../models/Subject.js';
 
-//  Create a new subjects (Admin Only)
+//  Create a new subject (Admin Only)
 export const createSubject = async (req, res) => {
   try {
     const { name, gradeLevel } = req.body;
@@ -30,7 +30,7 @@ export const getAllSubjects = async (req, res) => {
   }
 };
 
-//  Delete a subjects (Admin Only)
+//  Delete a subject (Admin Only)
 export const deleteSubject = async (req, res) => {
   try {
     const { id } = req.params;
@@ -54,11 +54,10 @@ export const getSubjectsByGrade = async (req, res) => {
     if (!subjects.length) {
       return res.status(404).json({ error: 'No subjects found for this grade level' });
     }
-
+    
     res.json(subjects);
   } catch (error) {
     console.error("Error fetching subjects:", error);
     res.status(500).json({ error: 'Server error' });
   }
 };
-

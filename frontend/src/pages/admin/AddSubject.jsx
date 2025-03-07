@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Modal from '../../components/Modal';
 import api from '../../services/api';
+import Modal from '../../components/Modal';
 
 const AddSubject = () => {
   const [name, setName] = useState('');
@@ -12,8 +12,8 @@ const AddSubject = () => {
     try {
       await api.post('/subjects', { name, gradeLevel: Number(gradeLevel) });
       setModal({ open: true, message: 'Subject added successfully!', type: 'success' });
-
-      setTimeout(() => setModal({ open: false }), 4000); // Auto-close after 2 seconds
+      
+      setTimeout(() => setModal({ open: false }), 1000); // Auto-close after 2 seconds
     } catch (error) {
       setModal({ open: true, message: 'Error adding subject', type: 'error' });
     }
