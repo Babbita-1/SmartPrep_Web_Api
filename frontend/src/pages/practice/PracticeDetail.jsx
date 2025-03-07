@@ -46,7 +46,7 @@ const PracticeDetail = () => {
   const handleSubmit = async () => {
     try {
       // console.log("Submitting test for ID:", testId);
-      // console.log("Answers:", answer);
+      // console.log("Answers:", answers);
 
       const res = await api.post(`/practice/submit/${testId}`, { answers });
 
