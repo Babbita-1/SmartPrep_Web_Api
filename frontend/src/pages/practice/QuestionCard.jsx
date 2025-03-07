@@ -1,8 +1,8 @@
 import React from 'react';
 
+//questionscard
 const QuestionCard = ({ index, question, selectedOption, onChangeOption }) => {
   const { questionText, options } = question;
-
   return (
     <div className="mb-4 bg-white shadow p-4 rounded">
       <h2 className="font-semibold mb-2">
