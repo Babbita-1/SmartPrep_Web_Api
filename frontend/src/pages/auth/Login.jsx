@@ -24,7 +24,7 @@ const Login = () => {
                 if (response.data.user.role === 'admin') {
                     navigate('/admin/dashboard'); // Redirect Admins
                 } else {
-                    navigate('/dashboard'); // Redirect Student
+                    navigate('/dashboard'); // Redirect Students
                 }
             }, 500);
         } catch (error) {
