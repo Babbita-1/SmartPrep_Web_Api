@@ -54,3 +54,4 @@ export const deleteResource = async (req, res) => {
 };
 
 // admins
+//resources
