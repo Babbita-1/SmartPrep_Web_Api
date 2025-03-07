@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
-import { Link } from 'react-router-dom';
 
+//signup
 const Signup = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -29,9 +29,9 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await api.post('/auth/register', { 
-                ...formData, 
-                academicLevel: formData.role === 'admin' ? null : Number(formData.academicLevel) 
+            await api.post('/auth/register', {
+                ...formData,
+                academicLevel: formData.role === 'admin' ? null : Number(formData.academicLevel)
             });
             setModal({ open: true, message: 'Registration successful! You can now log in.', type: 'success' });
 
