@@ -27,7 +27,7 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
-// Update User Profile (Allow Users to Edit Their Own Profile)
+// Update User Profile (Allow User to Edit Their Own Profile)
 export const updateUserProfile = async (req, res) => {
   try {
     const { id } = req.params;
