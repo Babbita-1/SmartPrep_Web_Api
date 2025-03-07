@@ -10,7 +10,7 @@ const MyGradeSubjects = () => {
       try {
         setLoading(true);
         const res = await api.get('/api/subjects/all');
-        setSubjects(res.data); // Should be a flat array if user is not admin
+        setSubjects(res.data); // Should be a flat array if users is not admin
       } catch (error) {
         console.error('Error fetching subjects:', error);
       } finally {
