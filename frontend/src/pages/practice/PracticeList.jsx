@@ -4,7 +4,7 @@ import { AuthContext } from '../../App';
 import LoadingSpinner from '../../components/shared/LoadingSpinner';
 import api from '../../services/api';
 
-//practicelist
+//Practicelist
 const PracticeList = () => {
   const { auth } = useContext(AuthContext);
   const navigate = useNavigate();
