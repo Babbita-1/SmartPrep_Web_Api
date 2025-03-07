@@ -62,4 +62,4 @@ export const getSubjectsByGrade = async (req, res) => {
   }
 };
 
-//subjectscontrollers
+//subjectscontroller
