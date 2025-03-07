@@ -71,7 +71,7 @@ export const logoutUser = (req, res) => {
   return res.json({ message: 'Logged out successfully' });
 };
 
-//  Get Current User
+//  Get Current Users
 export const getCurrentUser = async (req, res) => {
   try {
     const token = req.cookies.authToken;
