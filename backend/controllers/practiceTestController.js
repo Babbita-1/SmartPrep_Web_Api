@@ -1,8 +1,8 @@
-import PracticeTest from '../models/PracticeTest.js';
 import Attempt from '../models/Attempt.js';
+import PracticeTest from '../models/PracticeTest.js';
 import Subject from '../models/Subject.js';
 
-// ✅ Create Practice Test
+// ✅ Create Practice Tests
 export const createTest = async (req, res) => {
   try {
     const { subjectId } = req.params;
@@ -148,7 +148,7 @@ const formatTestsByGradeAndSubject = (tests) => {
 
     if (!acc[grade]) acc[grade] = {};
     if (!acc[grade][subjectName]) acc[grade][subjectName] = [];
-    
+
     acc[grade][subjectName].push({
       _id: test._id,
       title: test.title,
