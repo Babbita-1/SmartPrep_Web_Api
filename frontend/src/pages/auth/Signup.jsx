@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 
-//signup
 const Signup = () => {
     const [formData, setFormData] = useState({
         name: '',
