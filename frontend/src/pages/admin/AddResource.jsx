@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 
-//addresources
 const AddResource = () => {
   const [formData, setFormData] = useState({ subjectId: '', title: '', type: '', url: '' });
   const navigate = useNavigate();
