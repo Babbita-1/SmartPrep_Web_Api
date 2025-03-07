@@ -1,7 +1,7 @@
 import Resource from '../models/Resource.js';
 import Subject from '../models/Subject.js';
 
-//  Add Resource (Admin Only)
+//  Add Resources (Admin Only)
 export const createResource = async (req, res) => {
   try {
     const { subjectId } = req.params;
