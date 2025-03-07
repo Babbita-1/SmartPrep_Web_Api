@@ -1,9 +1,10 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../../services/api';
 import { AuthContext } from '../../App';
 import LoadingSpinner from '../../components/shared/LoadingSpinner';
+import api from '../../services/api';
 
+//practicelist
 const PracticeList = () => {
   const { auth } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const PracticeList = () => {
     const fetchTests = async () => {
       try {
         let endpoint;
-        
+
         if (auth?.role === 'admin') {
           endpoint = '/practice/all'; // Admin gets all tests
         } else {
@@ -57,7 +58,7 @@ const PracticeList = () => {
         Object.keys(tests).map(grade => (
           <div key={grade} className="mb-6">
             <h2 className="text-2xl font-semibold text-gray-800">Grade {grade}</h2>
-            
+
             {Object.keys(tests[grade]).map(subject => (
               <div key={subject} className="mt-4">
                 <h3 className="text-xl font-semibold text-gray-700">{subject}</h3>
