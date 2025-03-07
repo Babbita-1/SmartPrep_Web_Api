@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Modal from '../../components/Modal';
 import api from '../../services/api';
 
-//subject
+//subjects
 const AddSubject = () => {
   const [name, setName] = useState('');
   const [gradeLevel, setGradeLevel] = useState('');
