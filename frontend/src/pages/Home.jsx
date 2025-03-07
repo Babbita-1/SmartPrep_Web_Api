@@ -43,7 +43,7 @@ const Home = () => {
     return <div className="text-center mt-20 text-xl text-gray-700">Loading...</div>;
   }
   const handleGetStarted = () => {
-    // navigate to the sign-up
+    // navigate to sign-up
     navigate("/sign-up");
   };
 
