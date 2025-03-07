@@ -30,7 +30,7 @@ export const getAllSubjects = async (req, res) => {
   }
 };
 
-//  Delete a subject (Admin Only)
+//  Delete a subjects (Admin Only)
 export const deleteSubject = async (req, res) => {
   try {
     const { id } = req.params;
