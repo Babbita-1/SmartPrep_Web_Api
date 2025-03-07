@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 import api from '../../services/api';
 import QuestionCard from './QuestionCard';
-import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
 const PracticeDetail = () => {
   const { testId } = useParams();
@@ -16,9 +16,9 @@ const PracticeDetail = () => {
     const fetchTestData = async () => {
       try {
         setLoading(true);
-  
+
         const res = await api.get(`/practice/test/${testId}`);
-  
+
         if (!res.data || !res.data.questions) {
           console.error("Invalid test data received:", res.data);
           setTestData(null);
@@ -32,10 +32,10 @@ const PracticeDetail = () => {
         setLoading(false);
       }
     };
-  
+
     fetchTestData();
   }, [testId]);
-  
+
 
   const handleOptionChange = (questionIndex, optionIndex) => {
     const newAnswers = [...answers];
@@ -46,23 +46,23 @@ const PracticeDetail = () => {
   const handleSubmit = async () => {
     try {
       // console.log("Submitting test for ID:", testId);
-      // console.log("Answers:", answers);
-  
+      // console.log("Answers:", answer);
+
       const res = await api.post(`/practice/submit/${testId}`, { answers });
-  
+
       // console.log("Test submission successful. Response:", res.data);
       setScore(res.data.score);
     } catch (error) {
       console.error('Error submitting test:', error);
-  
+
       if (error.response) {
         console.error("Server Response:", error.response.data);
       }
-  
+
       alert("Failed to submit test. Please try again.");
     }
   };
-  
+
 
   if (loading) {
     return (
