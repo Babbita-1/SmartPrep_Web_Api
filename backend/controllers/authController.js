@@ -87,4 +87,3 @@ export const getCurrentUser = async (req, res) => {
   }
 };
 
-//login
