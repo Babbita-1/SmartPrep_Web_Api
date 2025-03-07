@@ -39,7 +39,7 @@ export const getResourcesBySubject = async (req, res) => {
   }
 };
 
-//  Delete Resource (Admin Only)
+//  Delete Resources (Admin Only)
 export const deleteResource = async (req, res) => {
   try {
     const { resourceId } = req.params;
