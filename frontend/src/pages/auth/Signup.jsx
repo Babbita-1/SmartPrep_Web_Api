@@ -9,7 +9,7 @@ const Signup = () => {
         email: '',
         password: '',
         academicLevel: '',
-        role: 'student' // Default role is student
+        role: 'student' // Default role is students
     });
     const [modal, setModal] = useState({ open: false, message: '', type: '' });
 
