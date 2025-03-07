@@ -1,5 +1,6 @@
 import React from 'react';
 
+//resourcescard
 const ResourceCard = ({ resource }) => {
   const { title, type, url } = resource;
 
@@ -9,7 +10,7 @@ const ResourceCard = ({ resource }) => {
       <p className="text-sm text-gray-600 capitalize">Type: {type}</p>
       <div className="mt-4">
         {type === 'video' ? (
-      
+
           <iframe
             title={title}
             src={url}
