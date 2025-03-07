@@ -49,7 +49,7 @@ const Home = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen flex flex-col">
-      {/* Hero Sections */}
+      {/* Hero Section */}
       <motion.header
         className="flex flex-col-reverse md:flex-row items-center max-w-7xl mx-auto px-4 py-12"
         initial="hidden"
