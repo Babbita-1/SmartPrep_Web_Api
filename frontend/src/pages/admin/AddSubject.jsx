@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import api from '../../services/api';
 import Modal from '../../components/Modal';
+import api from '../../services/api';
 
+//subject
 const AddSubject = () => {
   const [name, setName] = useState('');
   const [gradeLevel, setGradeLevel] = useState('');
@@ -12,7 +13,7 @@ const AddSubject = () => {
     try {
       await api.post('/subjects', { name, gradeLevel: Number(gradeLevel) });
       setModal({ open: true, message: 'Subject added successfully!', type: 'success' });
-      
+
       setTimeout(() => setModal({ open: false }), 1000); // Auto-close after 2 seconds
     } catch (error) {
       setModal({ open: true, message: 'Error adding subject', type: 'error' });
