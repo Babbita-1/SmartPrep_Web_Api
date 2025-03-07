@@ -23,7 +23,7 @@ export const createResource = async (req, res) => {
   }
 };
 
-//  Get Resources by Subjects (Public)
+//  Get Resources by Subjects 
 export const getResourcesBySubject = async (req, res) => {
   try {
     const { subjectId } = req.params;
