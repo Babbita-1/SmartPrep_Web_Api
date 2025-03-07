@@ -13,7 +13,7 @@ const AddSubject = () => {
       await api.post('/subjects', { name, gradeLevel: Number(gradeLevel) });
       setModal({ open: true, message: 'Subject added successfully!', type: 'success' });
 
-      setTimeout(() => setModal({ open: false }), 1000); // Auto-close after 2 seconds
+      setTimeout(() => setModal({ open: false }), 1000); // Auto-close after 2 second
     } catch (error) {
       setModal({ open: true, message: 'Error adding subject', type: 'error' });
     }
