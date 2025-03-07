@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 
-//tests
+//test
 const AddTest = () => {
   const [subjects, setSubjects] = useState([]);
   const [formData, setFormData] = useState({ subjectId: '', title: '', questions: [] });
