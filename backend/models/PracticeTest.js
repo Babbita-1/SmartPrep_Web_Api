@@ -11,7 +11,7 @@ const PracticeTestSchema = new mongoose.Schema({
     {
       questionText: String,
       options: [String], // multiple choice options
-      correctAnswer: Number // index of the correct option
+      correctAnswer: Number // index of the correct options
     }
   ]
 }, { timestamps: true });
