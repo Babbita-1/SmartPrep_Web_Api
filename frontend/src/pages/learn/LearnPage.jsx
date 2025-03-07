@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import LoadingSpinner from '../../components/shared/LoadingSpinner';
 import api from '../../services/api';
 import ResourceCard from './ResourceCard';
-import LoadingSpinner from '../../components/shared/LoadingSpinner';
 
+//learnpage
 const LearnPage = ({ subjectId }) => {
   const [resources, setResources] = useState([]);
   const [loading, setLoading] = useState(true);
