@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
-import api from '../../services/api';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../App';
+import api from '../../services/api';
 
+//profile
 const UserProfile = () => {
   const { auth } = useContext(AuthContext);
   const [user, setUser] = useState(null);

@@ -1,6 +1,5 @@
 import React from 'react';
 
-//questionscard
 const QuestionCard = ({ index, question, selectedOption, onChangeOption }) => {
   const { questionText, options } = question;
   return (
