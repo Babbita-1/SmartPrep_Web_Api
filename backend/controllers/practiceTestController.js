@@ -2,7 +2,7 @@ import Attempt from '../models/Attempt.js';
 import PracticeTest from '../models/PracticeTest.js';
 import Subject from '../models/Subject.js';
 
-// ✅ Create Practices Tests
+// ✅ Create Practice Tests
 export const createTest = async (req, res) => {
   try {
     const { subjectId } = req.params;
