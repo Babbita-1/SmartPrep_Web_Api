@@ -36,4 +36,4 @@ const AddResource = () => {
 };
 
 export default AddResource;
-//add
+//adds
