@@ -1,7 +1,6 @@
 import React from "react";
 import about from "../assets/about.jpg";
 
-//about
 const About = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center py-10">
