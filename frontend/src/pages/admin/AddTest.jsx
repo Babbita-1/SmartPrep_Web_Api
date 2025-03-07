@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import api from '../../services/api';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Modal from '../../components/Modal';
+import api from '../../services/api';
 
-
+//tests
 const AddTest = () => {
   const [subjects, setSubjects] = useState([]);
   const [formData, setFormData] = useState({ subjectId: '', title: '', questions: [] });
@@ -73,7 +72,7 @@ const AddTest = () => {
     };
 
     try {
-      await api.post(`/practice/create/${formattedData.subjectId}`, formattedData); 
+      await api.post(`/practice/create/${formattedData.subjectId}`, formattedData);
       setModal({ open: true, message: 'Practice test added successfully!', type: 'success' });
       navigate('/admin/dashboard');
     } catch (error) {
