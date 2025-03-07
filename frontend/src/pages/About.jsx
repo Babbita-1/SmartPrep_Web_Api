@@ -1,6 +1,7 @@
 import React from "react";
 import about from "../assets/about.jpg";
 
+//about
 const About = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex flex-col items-center py-10">
@@ -21,23 +22,23 @@ const About = () => {
       {/* Content Section */}
       <div className="mt-10 w-11/12 md:w-2/3 lg:w-1/2 text-center">
         <p className="text-xl md:text-2xl  text-gray-700 leading-relaxed mb-6">
-          SmartPrep is your all-in-one platform for enhanced learning. We provide 
-          grade-level specific resources, interactive quizzes, and personalized 
+          SmartPrep is your all-in-one platform for enhanced learning. We provide
+          grade-level specific resources, interactive quizzes, and personalized
           practice exams to help you master every subject at your own pace.
         </p>
 
         <p className="text-xl md:text-2xl  text-gray-700 leading-relaxed mb-6">
-          Our mission is to empower students across the globe by offering 
-          high-quality educational materials tailored to their curriculum. We 
-          believe in making learning both accessible and engaging, ensuring 
+          Our mission is to empower students across the globe by offering
+          high-quality educational materials tailored to their curriculum. We
+          believe in making learning both accessible and engaging, ensuring
           every learner can excel in and outside the classroom.
         </p>
 
         <p className="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6">
-          Whether you’re looking to strengthen your fundamentals or challenge 
-          yourself with advanced concepts, SmartPrep is designed to guide you 
-          every step of the way. By combining modern technology with proven 
-          teaching methods, we strive to deliver the best possible experience 
+          Whether you’re looking to strengthen your fundamentals or challenge
+          yourself with advanced concepts, SmartPrep is designed to guide you
+          every step of the way. By combining modern technology with proven
+          teaching methods, we strive to deliver the best possible experience
           for learners of all levels.
         </p>
 
@@ -52,7 +53,7 @@ const About = () => {
             </li>
             <li>
               <span className="font-semibold">Interactive Practice:</span>{" "}
-              Stay engaged with quizzes, short tests, and full-length exams 
+              Stay engaged with quizzes, short tests, and full-length exams
               that adapt to your learning pace.
             </li>
             <li>
