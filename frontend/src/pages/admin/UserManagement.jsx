@@ -54,5 +54,4 @@ const UserManagement = () => {
   );
 };
 
-//usermanagements
 export default UserManagement;
