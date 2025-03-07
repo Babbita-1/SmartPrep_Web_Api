@@ -87,4 +87,5 @@ export const getCurrentUser = async (req, res) => {
   }
 };
 
-//loginbnmm
+//login
+//resgister
