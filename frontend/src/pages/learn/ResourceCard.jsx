@@ -1,6 +1,5 @@
 import React from 'react';
 
-//resourcescard
 const ResourceCard = ({ resource }) => {
   const { title, type, url } = resource;
 
