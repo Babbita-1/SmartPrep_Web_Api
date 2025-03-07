@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../services/api';
 import { AuthContext } from '../App';
+import api from '../services/api';
 
 const Dashboard = () => {
   const { auth } = useContext(AuthContext);
@@ -12,7 +12,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     if (!auth) {
-      navigate('/sign-in'); // Redirect if not logged in
+      navigate('/sign-in'); // Redirect if not logged In
     } else {
       fetchUserSubjects();
     }
