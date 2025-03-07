@@ -12,15 +12,15 @@ const AllSubjects = () => {
         setLoading(true);
         const res = await api.get('/subjects/all');
         // The response could be either an array of grouped data if admin
-        // or a flat array if user is a student
+        // or a flat array if user is a students
         if (Array.isArray(res.data) && res.data[0]?._id !== undefined && res.data[0].subjects) {
-          
+
           setIsAdmin(true);
           setGroupedSubjects(res.data);
         } else {
-          
+
           setIsAdmin(false);
-          
+
           setGroupedSubjects([{ _id: 'Your Grade', subjects: res.data }]);
         }
       } catch (error) {
