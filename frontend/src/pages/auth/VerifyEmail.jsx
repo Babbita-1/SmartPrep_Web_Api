@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 
-//verify email
+//verifyemail
 const VerifyEmail = () => {
     const [email, setEmail] = useState('');
     const [code, setCode] = useState('');
