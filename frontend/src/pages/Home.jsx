@@ -1,13 +1,12 @@
-import React from "react";
-import { useContext, useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from '../App';
-import { motion } from "framer-motion";
 
-import heroImage from "../assets/heroImage.png";
+import featureExam from "../assets/featureExam.jpg";
 import featureLearn from "../assets/featureLearn.jpg";
 import featurePractice from "../assets/featurePractice.jpg";
-import featureExam from "../assets/featureExam.jpg";
+import heroImage from "../assets/heroImage.png";
 
 const fadeUpVariant = {
   hidden: { opacity: 0, y: 40 },
@@ -44,7 +43,7 @@ const Home = () => {
     return <div className="text-center mt-20 text-xl text-gray-700">Loading...</div>;
   }
   const handleGetStarted = () => {
-    // navigate to sign-up
+    // navigate to the sign-up
     navigate("/sign-up");
   };
 
@@ -66,7 +65,7 @@ const Home = () => {
           </h1>
           <p className="mt-4 text-gray-600 text-lg md:text-xl">
             Access grade-specific subjects, learn with interactive resources,
-            and practice with real-time quizzes. Take your studying 
+            and practice with real-time quizzes. Take your studying
             to the next level.
           </p>
           <button
@@ -117,7 +116,7 @@ const Home = () => {
                   Learn
                 </h3>
                 <p className="text-gray-600 mt-2 text-lg md:text-xl">
-                  Dive into expertly curated resources, videos, and notes 
+                  Dive into expertly curated resources, videos, and notes
                   tailored to your grade level.
                 </p>
               </div>
@@ -169,7 +168,7 @@ const Home = () => {
                   Exams
                 </h3>
                 <p className="text-gray-600 mt-2 text-lg md:text-xl">
-                  Challenge yourself with full-length practice exams 
+                  Challenge yourself with full-length practice exams
                   to simulate real test conditions.
                 </p>
               </div>
